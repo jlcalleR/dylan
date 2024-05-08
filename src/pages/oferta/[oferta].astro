@@ -1,0 +1,22 @@
+---
+import type { array } from 'astro/zod';
+
+export function getStaticPaths() {
+  return [
+    {params: {oferta: '2x1'}},
+    {params: {oferta: '50'}},
+    {params: {oferta: '100'}},
+  ];
+}
+
+const { oferta } = Astro.params;
+
+let data = await fetch("https://opensheet.elk.sh/1qh8ZXINHMeyksoeOLJLfFHiqLi6Wq33KpO1cHDQpNbQ/Hoja")
+let dataJson = await data.json()
+
+let value = await dataJson.find((obj: { nombre: string; }) => obj.nombre === oferta)?.columna
+
+---
+<div>¡Buen chico, {oferta}!
+    <p>{value}</p>
+</div>

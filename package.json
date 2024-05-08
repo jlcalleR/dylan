@@ -1,0 +1,21 @@
+{
+  "name": "dylan",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev --host",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.5.10",
+    "@googleapis/docs": "^3.0.0",
+    "astro": "^4.7.0",
+    "google-auth-library": "^9.9.0",
+    "googleapis": "^135.0.0",
+    "typescript": "^5.4.5",
+    "xlsx": "^0.18.5"
+  }
+}
